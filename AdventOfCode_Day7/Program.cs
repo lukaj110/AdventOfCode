@@ -5,26 +5,39 @@ using (var reader = new StreamReader("Input.txt"))
     foreach (var submarine in reader.ReadLine().Split(","))
     {
         submarines.Add(int.Parse(submarine));
+    }
 }
-}
+
+//Part 1
+
 submarines.Sort();
 
-int closest = submarines.Aggregate((x, y) => Math.Abs(x - submarines.Average()) < Math.Abs(y - submarines.Average()) ? x : y);
+int average = submarines[submarines.Count / 2];
 
-List<int> positions = new List<int>();
+int totalFuel = 0;
 
-for(int x = 0; x < 2000; x++)
+for (int i = 0; i < submarines.Count; i++)
 {
-    int totalFuel = 0;
-
-    for (int i = 0; i < submarines.Count; i++)
-    {
-        totalFuel += x > submarines[i] ? x - submarines[i] : submarines[i] - x;
-    }
-
-    positions.Add(totalFuel);
-
-    Console.WriteLine($"Position {x}: {totalFuel}");
+    totalFuel += Math.Abs(average - submarines[i]);
 }
 
-Console.WriteLine(positions.Min());
+Console.WriteLine(totalFuel);
+
+//Part 2
+
+List<int> fuelList = new List<int>();
+
+for (int count = 0; count < 2000; count++)
+{
+    totalFuel = 0;
+    for (int i = 0; i < submarines.Count; i++)
+    {
+        for (int j = 1; j <= Math.Abs(count - submarines[i]); j++)
+        {
+            totalFuel += j;
+        }
+    }
+    fuelList.Add(totalFuel);
+}
+
+Console.WriteLine(fuelList.Min());
