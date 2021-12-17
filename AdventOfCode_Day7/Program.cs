@@ -26,18 +26,24 @@ Console.WriteLine(totalFuel);
 //Part 2
 
 List<int> fuelList = new List<int>();
+List<Task> taskList = new List<Task>();
 
 for (int count = 0; count < 2000; count++)
 {
-    totalFuel = 0;
-    for (int i = 0; i < submarines.Count; i++)
+    taskList.Add(Task.Factory.StartNew((state) =>
     {
-        for (int j = 1; j <= Math.Abs(count - submarines[i]); j++)
+        int totalFuel = 0;
+        for (int i = 0; i < submarines.Count; i++)
         {
-            totalFuel += j;
+            for (int j = 1; j <= Math.Abs((int)state - submarines[i]); j++)
+            {
+                totalFuel += j;
+            }
         }
-    }
-    fuelList.Add(totalFuel);
+        fuelList.Add(totalFuel);
+    }, count));
 }
+
+taskList.ForEach(e => e.Wait());
 
 Console.WriteLine(fuelList.Min());
