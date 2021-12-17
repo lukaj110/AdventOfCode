@@ -36,22 +36,40 @@ for (int i = 0; i < input.Count; i++)
     var unknownSegmentConnections = wireSegmentConnections.Where(e => e.Length > 4 && e.Length != 7).ToList();
 
     char segmentA = sevenSegments.Where(e => !oneSegments.Contains(e)).Single();
+
     char[] segmentBC = oneSegments;
-    char[] segmentGD = unknownSegmentConnections
-        .Where(e => e.Length == 5 && oneSegments.All(x => e.Contains(x))).Single().ToCharArray()
+
+    char[] numberThree = unknownSegmentConnections
+                         .Where(e => e.Length == 5 && oneSegments
+                         .All(x => e.Contains(x))).Single()
+                         .ToCharArray();
+
+    char[] segmentGD = numberThree
         .Where(e => !sevenSegments.Contains(e))
         .ToArray();
+
     char segmentF = fourSegments.Where(e => !oneSegments.Contains(e) && !segmentGD.Contains(e)).Single();
+
     char segmentG = fourSegments.Where(e => !oneSegments.Contains(e) && e != segmentF).Single();
+
     char segmentD = segmentGD.Where(e => e != segmentG).Single();
-    char segmentB = unknownSegmentConnections
-        .Where(e => e.Length == 5 && !e.Contains(segmentF) && e.Where(x => oneSegments.Contains(x)).Count() == 1).Single().ToCharArray()
-        .Where(e => e != segmentA && !segmentGD.Contains(e) && oneSegments.Contains(e)).Single();
+
+    char[] numberTwo = unknownSegmentConnections
+                       .Where(e => e.Length == 5 && !e.Contains(segmentF) && e.Where(x => oneSegments.Contains(x)).Count() == 1)
+                       .Single().ToCharArray();
+
+    char segmentB = numberTwo
+                    .Where(e => e != segmentA && !segmentGD.Contains(e) && oneSegments.Contains(e))
+                    .Single();
+
     char segmentC = segmentBC.Where(e => e != segmentB).Single();
-    var numberNine = unknownSegmentConnections.Where(e => e.Length == 6 && e.Contains(segmentB) && e.Contains(segmentG)).ToList();
-    char segmentE = eightSegments.Where(el => !unknownSegmentConnections
-        .Where(e => e.Length == 6 && e.Contains(segmentG) && e.Contains(segmentB)).Single().ToCharArray()
-        .Contains(el)).Single();
+
+
+    char[] numberNine = unknownSegmentConnections
+                        .Where(e => e.Length == 6 && e.Contains(segmentG) && e.Contains(segmentB)).Single()
+                        .ToCharArray();
+
+    char segmentE = eightSegments.Where(el => !numberNine.Contains(el)).Single();
 
     //One
     segmentConnections.Add(new string(oneSegments), 1);
