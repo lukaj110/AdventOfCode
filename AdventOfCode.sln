@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day1", "AdventOfCode_Day1\AdventOfCode_Day1.csproj", "{7E84D579-0FB3-4387-BB29-B9D08A5A06D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day01", "AdventOfCode_Day1\AdventOfCode_Day01.csproj", "{7E84D579-0FB3-4387-BB29-B9D08A5A06D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day2", "AdventOfCode_Day2\AdventOfCode_Day2.csproj", "{26654D73-325A-466B-AA0F-4707233DBB6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day02", "AdventOfCode_Day2\AdventOfCode_Day02.csproj", "{26654D73-325A-466B-AA0F-4707233DBB6A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day3", "AdventOfCode_Day3\AdventOfCode_Day3.csproj", "{2FF9236B-57D5-4EF1-8315-C34F1D90BB94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day03", "AdventOfCode_Day3\AdventOfCode_Day03.csproj", "{2FF9236B-57D5-4EF1-8315-C34F1D90BB94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day4", "AdventOfCode_Day4\AdventOfCode_Day4.csproj", "{DA77BA2D-C293-4E5A-B2C1-5EAB3C3AC4BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day04", "AdventOfCode_Day4\AdventOfCode_Day04.csproj", "{DA77BA2D-C293-4E5A-B2C1-5EAB3C3AC4BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day5", "AdventOfCode_Day5\AdventOfCode_Day5.csproj", "{736BC199-38F5-4B9B-B9CB-77ECF74773EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day05", "AdventOfCode_Day5\AdventOfCode_Day05.csproj", "{736BC199-38F5-4B9B-B9CB-77ECF74773EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day6", "AdventOfCode_Day6\AdventOfCode_Day6.csproj", "{7088CE54-04A0-4014-BB3F-5482033AAE0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day06", "AdventOfCode_Day6\AdventOfCode_Day06.csproj", "{7088CE54-04A0-4014-BB3F-5482033AAE0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day7", "AdventOfCode_Day7\AdventOfCode_Day7.csproj", "{C116A1C7-870D-484B-8BF4-44F3DC4CAAC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day07", "AdventOfCode_Day7\AdventOfCode_Day07.csproj", "{C116A1C7-870D-484B-8BF4-44F3DC4CAAC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day8", "AdventOfCode_Day8\AdventOfCode_Day8.csproj", "{8CF6C709-31FB-4289-8076-CF161D767D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode_Day08", "AdventOfCode_Day8\AdventOfCode_Day08.csproj", "{8CF6C709-31FB-4289-8076-CF161D767D54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day9", "AdventOfCode_Day9\AdventOfCode_Day9.csproj", "{1D39AC4A-480B-4A42-8EF8-CA16AC9EA686}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day09", "AdventOfCode_Day9\AdventOfCode_Day09.csproj", "{1D39AC4A-480B-4A42-8EF8-CA16AC9EA686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode_Day10", "AdventOfCode_Day10\AdventOfCode_Day10.csproj", "{58C341D9-CDB5-4B1E-9111-A530ACE54166}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{1D39AC4A-480B-4A42-8EF8-CA16AC9EA686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D39AC4A-480B-4A42-8EF8-CA16AC9EA686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D39AC4A-480B-4A42-8EF8-CA16AC9EA686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C341D9-CDB5-4B1E-9111-A530ACE54166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C341D9-CDB5-4B1E-9111-A530ACE54166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C341D9-CDB5-4B1E-9111-A530ACE54166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C341D9-CDB5-4B1E-9111-A530ACE54166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
