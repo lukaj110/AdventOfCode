@@ -37,3 +37,7 @@ var paths = startNode.TraverseToEndPart1(new List<Cave>());
 Console.WriteLine(paths.Count());
 
 //Part 2
+
+var pathsPart2 = startNode.TraverseToEndPart2(new List<Cave>());
+
+Console.WriteLine(pathsPart2.Count());
