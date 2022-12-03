@@ -1,6 +1,7 @@
 // Input
 
 const text = await Deno.readTextFile("./input.txt");
+const lines = text.split("\n");
 
 // Part 1
 
@@ -34,8 +35,8 @@ function getGameState(a: Shape, b: Shape) {
 
 let points = 0;
 
-for (const line of text.split("\n")) {
-  const chars = line.trim().split(" ");
+for (const line of lines) {
+  const chars = line.split(" ");
 
   const firstPlayer = charToShape(chars[0]);
   const secondPlayer = charToShape(chars[1]);
@@ -70,8 +71,8 @@ function charToStrategy(char: string) {
 
 let points2 = 0;
 
-for (const line of text.split("\n")) {
-  const chars = line.trim().split(" ");
+for (const line of lines) {
+  const chars = line.split(" ");
 
   const firstPlayer = charToShape(chars[0]);
   const strategy = charToStrategy(chars[1]);
