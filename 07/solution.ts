@@ -61,7 +61,7 @@ for (let i = 0; i < input.length; i++) {
         }
         j++;
       }
-      i += j - i - 1;
+      i = j - 1;
     } else if (command === "cd") {
       if (params === "..") {
         currentDirectory = currentDirectory.parentDirectory!;
