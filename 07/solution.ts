@@ -89,17 +89,17 @@ for (let i = 0; i < input.length; i++) {
   }
 }
 
-function findDirectorySum(directory: Directory): number {
+function calculateDirectorySum(directory: Directory): number {
   return (
     directory.subFiles.reduce((a, b) => a + b.size, 0) +
     directory.subDirectories
-      .map((subDirectory) => findDirectorySum(subDirectory))
+      .map((subDirectory) => calculateDirectorySum(subDirectory))
       .reduce((a, b) => a + b, 0)
   );
 }
 
 function findSmallSubdirectories(directory: Directory): Directory[] {
-  if (findDirectorySum(directory) <= 100000)
+  if (calculateDirectorySum(directory) <= 100000)
     return [
       directory,
       ...directory.subDirectories.flatMap((subDirectory) =>
@@ -116,7 +116,7 @@ function findSmallSubdirectories(directory: Directory): Directory[] {
 const smallDirectories: Directory[] = findSmallSubdirectories(rootDirectory);
 
 const sumDirectorySize = smallDirectories
-  .map((directory) => findDirectorySum(directory))
+  .map((directory) => calculateDirectorySum(directory))
   .reduce((a, b) => a + b, 0);
 
 console.log(sumDirectorySize);
@@ -128,10 +128,13 @@ const totalSpaceAvailable = 70000000;
 const unusedSpaceNeeded = 30000000;
 
 const currentAvailableSpace =
-  totalSpaceAvailable - findDirectorySum(rootDirectory);
+  totalSpaceAvailable - calculateDirectorySum(rootDirectory);
 
 function findDirectoriesToDelete(directory: Directory): Directory[] {
-  if (currentAvailableSpace + findDirectorySum(directory) >= unusedSpaceNeeded)
+  if (
+    currentAvailableSpace + calculateDirectorySum(directory) >=
+    unusedSpaceNeeded
+  )
     return [
       directory,
       ...directory.subDirectories.flatMap((subDirectory) =>
@@ -149,9 +152,9 @@ function findDirectoriesToDelete(directory: Directory): Directory[] {
 const directoriesToDelete = findDirectoriesToDelete(rootDirectory);
 
 const smallestDirectory = directoriesToDelete.sort(
-  (a, b) => findDirectorySum(a) - findDirectorySum(b)
+  (a, b) => calculateDirectorySum(a) - calculateDirectorySum(b)
 )[0];
 
-const smallestDirectorySize = findDirectorySum(smallestDirectory);
+const smallestDirectorySize = calculateDirectorySum(smallestDirectory);
 
 console.log(smallestDirectorySize);
