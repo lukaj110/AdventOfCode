@@ -11,6 +11,7 @@ type Position = {
   y: number;
 };
 
+// omg no way maths??? 😱😱😱😱
 function getDistanceFromHead(
   tailPosition: Position,
   headPosition: Position
@@ -25,7 +26,7 @@ function isHeadInRange(
   tailPosition: Position,
   headPosition: Position
 ): boolean {
-  return getDistanceFromHead(tailPosition, headPosition) <= 1.42;
+  return getDistanceFromHead(tailPosition, headPosition) <= 1.5;
 }
 
 function getPossiblePositions(tailPosition: Position) {
