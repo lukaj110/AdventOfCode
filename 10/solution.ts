@@ -27,8 +27,8 @@ for (let i = 0; i < input.length; i++) {
   const cycleNumber = cycle % 40;
 
   if ([register - 1, register, register + 1].includes(cycleNumber)) {
-    drawing[row].push("#");
-  } else drawing[row].push(".");
+    drawing[row].push("█");
+  } else drawing[row].push(" ");
 
   /* Part 2 end */
 
